@@ -1,0 +1,16 @@
+//关于itoa函数 i表示整数t表示转换到a表示字符串或者数组
+// :itoa是英文integer to array(将int整型数转化为一个字符串,并将值保存在数组string中)的缩写
+//例itoa(1357,t,10);表示将1357保存在数组t中 10表示以十进制转换
+//#include<stdio.h>
+//#include<stdlib.h.>
+//int main(void)
+//{
+//	char XUE[12];
+//	long xue = 0;
+//	long long JIN = 0;
+//	printf("输入学号\n");
+//	scanf("%d", &xue);
+//	_itoa(xue, XUE, 16);//itoa乃是旧版函数 新版vs更新后使用更加安全的_itoa函数代替
+//	puts(XUE);
+//	return 0;
+//}
