@@ -1,0 +1,363 @@
+#include<stdio.h> 
+#车钥匙  include包含  <>包含内容  std=standard标准  i=input输入 o=out输出  可能包含一个标准输入输出头文件  头文件内部包含函数及定义，可以视为函数库 此处为函数调用
+int main(viod)
+()表示main为函数而不是其他的东西  {}则表示main函数的函数体 括号中内容为该函数要完成的事
+{
+	printf("HelloWorld!\n");
+	print打印  f=format格式化   格式化输出    格式化=归类 这边的\n乃是换行符输出字符后自动光标转向下一行
+	return 0;
+	分号则表示语句的结束 c语言每句话都必须以分号结束  return表示main函数的结束 0则告知程序在退出时给执行程序的操作系统返回来一个结果
+}
+
+
+
+
+#include <stdio.h> 
+int main(void)
+{
+	char字符数据型  short短整型  int整形 long长整型  long long更长的整形  float单精度浮点数  double双精度浮点数
+ 还存在无符号的短整型 整形 长整型 他们没有包含负数只有正数 但包含范围大小与有符号型相当
+	char ch = 'a';
+}
+	1byte字节=8bit  kb=1024byte 以此类
+
+
+
+#include<stdio.h>
+int main(void)
+{
+	printf("  *\n");
+	printf(" **\n");
+	printf("***\n");
+	printf("%d\n", 100);
+	return  0;
+
+输出金字塔 输出字里可以加空格
+}
+\n代表输出完要换行
+
+
+变量的使用（多看看）
+#include<stdio.h>
+int main(void)
+{
+	int age = 20;
+	double weight = 20.1;
+		weight = weight - 10;
+		age = age + 1;
+		printf("%d\n", age);
+		printf("%lf\n", weight);
+		return 0;
+}
+%d打印类型为整形  %lf打印类型为双精度浮点型double  %f打印类型为单精度浮点型float 
+ %x或%X打印十六进制数  %o打印八进制数  %e以指数形式输出实数 若想输出%字符则需在printf中输入%%
+ ~为按位取反符号 0变1 1变零  >>右移运算符左边空出的部分会用0填补 相当于对a除以2的运算
+ 关于类似0x64 = 0x0000.... 0110 0100=64+32+4=100是这样的意思 计算机以二进制初春数据
+大括号内的定义为局部变量  大括号之上提前定义的为全局变量
+当全局变量与局部变量冲突的情况下局部变量优先
+异或运算  凯撒密码表
+
+
+#include<stdio.h>
+int main(void)
+{
+	int a = 125;
+	printf("%d", ~a);
+	return 0;
+}
+
+#include<stdio.h>
+int main(void)
+{
+	printf("%d", 0xff);
+	return 0;
+}
+
+    
+#include<stdio.h>
+int main(void)
+{
+	int a = 0;
+	int b = 0;
+	int sum = 0;
+	scanf("%d %d", &a, &b);//这边不小心多输入了一个\n 要小心
+	sum = a + b;
+	printf("sum=%d\n", sum);
+	return 0;
+}
+
+
+#include <stdio.h>
+int main(void)
+{
+	double weight = 20.1;
+		weight = weight - 10;
+		printf("%lf\n", weight);  //应该注意中间出现的空格会阻断
+		return 0;
+}
+
+
+#include<stdio.h>
+int main(void)
+{
+	double a = 0;
+	double b = 0;
+	double sum = 0;
+	scanf("%lf %lf", &a, &b);//这边不小心多输入了一个\n 要小心
+	sum = a + b;
+	printf("sum=%lf\n", sum);
+	return 0;
+}
+
+
+
+#include<stdio.h>
+int main(void)
+{
+	double a = 0;
+	double b = 0;
+	double sum = 0;//先定义出三个变量
+	scanf("%lf %lf",&a,&b);//scanf为输入 要求用户输入两个双精度浮点数         其中的&符号千万不可以忘记
+	sum = a + b;//定义变量sum=a+b
+	printf("%lf\n", sum);//输出双精度浮点数sum
+	return 0;
+}
+
+
+#include<stdio.h>
+int main(void)
+{
+	float a = 0;
+	float b = 0;
+	float sum = 0;
+	scanf("%f %f", &a, &b);
+	sum = a * b;
+	printf("%f\n", sum);
+	return 0;
+	//乘法代码
+}
+
+问题：输入两个数 输出他们的和差积商
+#include<stdio.h>
+int main(void)
+{
+	int a, b;//先定义整形 a b
+	printf("请输入两个整数\n");//在屏幕上打印 请输入两个整数 
+	scanf("%d %d", &a, &b);//要求用户输入两个整数代表 a b
+	printf("和:%d", a + b);//定义输出的数值
+	printf("差:%d",a - b);
+	printf("积:%d",a * b);
+	printf("商:%f", a / b);
+	return 0;
+}
+//同时输出和差积商   同时应该注意所有标点符号必须使用英文标点符号否则将无法使用无法识别。
+
+问题：华氏温度转化为摄氏温度
+#include<stdio.h>
+int main(void)
+{
+	int f=0;
+	float c=0;//定义整形f和单精度浮点数c  
+	printf("请输入华氏温度\n");//在屏幕中显示提示输入
+	scanf("%d", &f);//定义输入整形华氏温度f
+	c = 5 * (f - 32) / 9;//定义华氏温度转化为摄氏温度的计算公式
+	printf("摄氏温度:%f\n", c);//打印出结果
+	return 0;
+}
+//此段代码为华氏温度转化为摄氏温度  第一次自写成功9/9/2021；
+
+
+//c语言中++代表自增 --代表自减 并且前后有优先级之分
+#include  <stdio.h>
+int main(void)
+{
+	int a = 10;
+	printf("%10d\n", a);//在%与d之间插入数字即代表指定输出数据的域宽（数字+前方空格占位=域宽）
+	return 0;
+}
+
+
+#include <stdio.h>
+int main(void)
+{
+	int age;      //定义age存在类型
+	printf("请输入age的值\n"); //屏幕提示
+	scanf("%d", &age);   //用户输入age数值
+	if (age >= 18)
+	printf("成年\n");
+	else
+		printf("未成年\n");
+	return 0;
+}
+//首次使用选择语句  自输入年龄的辨识 中途发生有未知错误 多加复习。
+
+#include<stdio.h>
+int main(void)
+{
+	int age;
+	printf("请输入年龄大小\n");
+	scanf("%d", &age);
+	if (age < 18)
+		printf("未成年\n");
+	else if (age >= 18 && age < 28)
+		printf("青年\n");
+	else
+		printf("老年人\n");
+	return 0;
+}
+
+
+也可以使用分层的逻辑  在每一层都可以加入{}进行再次分支  else会与离他最近的同一层级的未匹配的if进行匹配
+inportant：当if else类型语句要控制多条语句需要加入{}（代码块）来控制  类似如此
+if（age < 18）;
+{
+	printf("未成年\n");
+	printf("不能谈恋爱\n");
+}
+
+
+#include<stdio.h>
+int main(void)
+{
+	int num = 4;
+	if (num == 5)//此处关键理解 鄙弃人类思维  等号处可以反着写形成好的风格5==num 万一忘记会马上报错
+	{
+		printf("呵呵\n");
+	}
+	return 0;
+}
+如此打代码 可以打印出 呵呵 因为一个=是赋值 而两个==才是等于 因此此处num=5改为num==5★
+
+
+判断一个数是否为奇数
+#include<stdio.h>
+int main(void)
+{
+	int a;
+	printf("输入一个数a\n");
+	scanf("%d",&a);
+	if (a % 2 == 0)
+		printf("a为偶数\n");
+	else
+		printf("a为奇数\n");
+	return 0;
+}
+我真牛逼
+
+
+
+输出1~100的奇数代码
+#include<stdio.h>
+int main(void)
+{
+	int a=1;
+	while (a < 100)//while循环语句 执行终了重复执行直到触底
+	{
+		if (a % 2 == 1)
+			printf("%d  ", a);
+		a++;
+	}
+	return 0;
+}
+
+ 
+#include<stdio.h>
+int main(void)
+{
+	int i = 1;
+	while (i < 100)
+	{
+		printf("%d  ", i);//没有了判断语句 与上文不同为算法不同
+		i += 2;
+	}
+	return 0;
+}
+
+
+#include<stdio.h>
+int main(void)
+{
+	int day;
+	scanf("%d", &day);
+	switch (day)//switch分支循环告诉进入点  break告诉出口点 switch后面括号只能填入 整形表达式
+	{
+	case 1://case后面只能填入整形常量以供判断
+		printf("星期一\n");
+		break;
+	case 2:
+		printf("星期二\n");
+		break;
+	case 3:
+		printf("星期三\n");
+		break;
+	case 4:
+		printf("星期四\n");
+		break;
+	case 5:
+		printf("星期五\n");
+		break;
+	}
+	return 0;
+}
+
+
+#include<stdio.h>
+int main(void)
+{
+	int day;
+	scanf("%d", &day);
+	switch(day)   //switch是允许镶套使用的
+	{
+	case 1:    //case语句之中也可以加入if语句等等
+	case 2:
+	case 3:
+	case 4:
+	case 5:    //此处case可以重合以便代码简洁
+		printf("工作日\n");
+		break;
+	case 6:
+	case 7:
+		printf("休息日\n");
+		break;
+	default:     //default 即是除了case包含之外的情况★
+		printf("输入错误\n");
+		break;
+	}
+	return 0;
+}
+
+
+
+#include<stdio.h>
+int main(void)
+{
+	int i = 1;
+	while (i <= 10)  //while  if 等带有条件意味的语句不可用;否则运行无结果 ★
+	{
+		if (i == 5)  //此处遇到break 程序运行直接跳出此代码块 前往return 0
+			break;   //此处若将break替换为continue(继续)那么程序运行回到while再次来到continue从而进入死循环★
+		printf("%d ", i);  //continue（跳过本次循环剩余代码，重新开始循环）
+		i++;
+	}
+	return 0;
+}
+
+
+
+getchar 用于获取键盘上所打入的字符
+#include<stdio.h>
+int main(void)
+{
+	int ch = getchar();
+	putchar(ch);//putchar用于输出由getchar输入的储存内容
+	printf("%c", ch);//此处printf的作用与putchar相同 
+	return 0;
+}
+
+#include<stdio.h>
+int main(void)
+{
+	int ch = getchar();//getcahr只能获得一个键入的字符
+	putchar(ch);
+	return 0;
+}
