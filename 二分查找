@@ -1,0 +1,75 @@
+//二分查找
+//#include<stdio.h>
+//int main(void)
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };//定义数组个数和元素
+//	int k;
+//	printf("请输入要查找数\n");
+//	scanf("%d", &k);
+//	int sz = sizeof(arr) / sizeof(arr[0]);//计算数组中元素的个数
+//	int left = 0;//0即是数组的初始标
+//	int right = sz - 1;//sz-1即是数组的右下标
+//	while (left <= right)//判定循环条件
+//	{
+//		int mid = (left + right) / 2;
+//		if (arr[mid] > k)       //选择语句进行筛选
+//		{
+//			right = mid - 1;
+//		}
+//		else if(arr[mid] < k)
+//		{
+//			left = mid + 1;
+//		}
+//		else
+//		{
+//			printf("找到了，下标是：%d\n", mid);
+//			break;
+//		}
+//	}
+//	if (left > right)  //需要想到的特殊情况
+//	{
+//		printf("没找到\n");
+//	}
+//	return 0;
+//}
+
+
+
+
+
+//函数二分查找
+//#include<stdio.h>
+//int _search(int arr[], int k,int sz)//实际上此处arr为接收了下面arr数组的首字符指针变量
+//{                                   //因此对于sizeof的计算不可放在此处 因为此处的arr并不是数组
+//	int left = 0;
+//	int right=sz - 1;
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (arr[mid] > k)
+//		{
+//			right = mid - 1;
+//		}
+//		else if (arr[mid] < k)  //要注意是数组中的数值比较 不是下标比较
+//		{
+//			left = mid + 1;
+//		}
+//		else
+//			return mid;
+//	}
+//	return -1;
+//}
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int k = 0;
+//	printf("请输入要查找的数\n");
+//	scanf("%d", &k);
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int ret=_search(arr, k,sz);
+//	if (ret == -1)
+//		printf("找不到指定数字\n");
+//	else
+//		printf("找到了 下标是:%d\n", ret);
+//	return 0;
+//}
